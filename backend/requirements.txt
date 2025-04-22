@@ -1,0 +1,28 @@
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+python-dotenv>=1.0.0
+pydantic-settings>=2.0.0
+
+# --- LlamaIndex Core ---
+llama-index>=0.10.20
+
+
+# --- HuggingFace Embeddings & LLM ---
+llama-index-embeddings-huggingface>=0.2.0
+llama-index-llms-huggingface>=0.1.4
+sentence-transformers>=2.2.0
+torch>=2.0.0 # Required by sentence-transformers & HF LLMs. Install CPU or GPU version as needed.
+transformers>=4.30.0
+accelerate>=0.25.0
+llama-index-llms-groq
+
+# --- ChromaDB Vector Store ---
+llama-index-vector-stores-chroma>=0.1.6
+chromadb
+# chromadb>=0.4.22
+
+# --- Document Parsing ---
+llama-index-readers-file>=0.1.10
+# pypdf>=3.17.0 # Consider for robust PDF parsing
+
+python-multipart # formData - fast api

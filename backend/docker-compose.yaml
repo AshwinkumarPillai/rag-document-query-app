@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  chromadb:
+    image: ghcr.io/chroma-core/chroma:latest
+    container_name: chromadb
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/chroma_db:/chroma/chroma
+    command: run --host 0.0.0.0 --port 8000
+    networks:
+      - chroma-net
+    
+
+  app:
+    build: .
+    container_name: my-fastapi-app
+    ports:
+      - "9000:9000"
+    depends_on:
+      - chromadb
+    volumes:
+      - .:/app
+    environment:
+      - HF_HOME=/root/.cache/huggingface
+    command: uvicorn app.main:app --host 0.0.0.0 --port 9000
+    networks:
+      - chroma-net
+
+networks:
+  chroma-net:
+    driver: bridge
