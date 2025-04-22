@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Replace with your actual backend URL
-const BASE_URL = "http://localhost:9000";
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:9000";
 
 export interface UploadResponse {
   message: string;
