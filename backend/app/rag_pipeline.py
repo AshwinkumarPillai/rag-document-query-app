@@ -14,7 +14,7 @@ from llama_index.core.node_parser import SentenceSplitter
 from llama_index.core.response_synthesizers import get_response_synthesizer
 
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
-from llama_index.llms.huggingface import HuggingFaceLLM
+# from llama_index.llms.huggingface import HuggingFaceLLM
 from llama_index.vector_stores.chroma import ChromaVectorStore
 import chromadb
 
